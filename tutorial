@@ -1,0 +1,54 @@
+
+// Tutorial
+
+// --- Auth
+artisan make:auth
+arisan migrate
+
+
+
+
+// --- Migration 
+artisan make:migration create_companies_table
+artisan migrate
+
+Update structure :
+artisan make:migration add_roles_to_users --table="users"
+
+- Reset All Data at DB : artisan migrate:refresh
+
+
+
+
+
+// --- Relation
+
+Membuat relasi di migration setiap table.
+
+Mengambil relasi :
+Buat Method di Model dan model relasinya.
+Data langsung otomatis terbind di kedua model.
+
+
+
+
+
+// --- Controller
+artisan make:controller NameController --resource --model=NameModel
+
+
+
+
+
+// --- Seeding (Data Dummy)
+artisan make:factory NameFactory
+artisan make:seeder NamesTableSeeder
+	edit NameFactory.php
+	edit method run() at NamesTableSeeder.php
+	register at DatabaseSeeder.php
+artisan db:seed
+
+
+
+
+https://github.com/daveozoalor/pmanager
